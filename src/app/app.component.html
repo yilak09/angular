@@ -1,10 +1,16 @@
 
 <mat-checkbox
 #showHome
-[checked]=isChecked (change)="onChange($event)" id="checkBoxId" >Show Expense</mat-checkbox>
+[checked]=isChecked (change)="onChange($event)" id="checkBoxId" >Show Account Details</mat-checkbox>
 
 <div *ngIf= "showHome.checked">
-Expense Details
+Name:    Yilak Ayele
+Account: 12435689
+Address: 637 Cowboys Pkwy
+Phone  :716-263-0256
+
+
+
 </div>
 
 <mat-radio-group value ="1">
@@ -12,9 +18,9 @@ Expense Details
   <mat-radio-button value="2" #showExpense [checked]=isChecked >Expense</mat-radio-button>
 </mat-radio-group>
 
-<div *ngIf= "showExpense.checked">
+<div *ngIf= "showExpense.checked" >
  <mat-form-field>
-    <mat-select placeholder="Expences">
+    <mat-select placeholder="Expences" [(ngModel)]="expense">
       <mat-option *ngFor ="let expense of expenses" [value]="expense.id">{{expense.name}}</mat-option>
     </mat-select>
   </mat-form-field>
@@ -22,8 +28,18 @@ Expense Details
 
 <div *ngIf= "showIncome.checked">
  <mat-form-field>
-    <mat-select placeholder="Incomes">
+    <mat-select placeholder="Incomes" [(ngModel)]="income">
       <mat-option *ngFor ="let income of incomes" [value]="income.id">{{income.name}}</mat-option>
     </mat-select>
   </mat-form-field>
 </div>
+
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Addition Expenses" value="">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <textarea matInput placeholder="Leave a comment"></textarea>
+  </mat-form-field>
+</form>

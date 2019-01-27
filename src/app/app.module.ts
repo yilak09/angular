@@ -7,10 +7,12 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule,MatSelectModule} from '@angular/material';
+import {FormsModule} from '@angular/forms';
 import {BrowserModule, CommonModule} from '@angular/common';
 import {MatFormFieldModule} from '@angular/material';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import {MatInputModule} from '@angular/material';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { AppComponent } from './app.component';
     MatSelectModule,
     MatFormFieldModule,
     BrowserModule,
-    CommonModule
+    CommonModule,
+    FormsModule,
+    MatInputModule
   
   ],
   providers: [],
