@@ -1,0 +1,29 @@
+
+<mat-checkbox
+#showHome
+[checked]=isChecked (change)="onChange($event)" id="checkBoxId" >Show Expense</mat-checkbox>
+
+<div *ngIf= "showHome.checked">
+Expense Details
+</div>
+
+<mat-radio-group value ="1">
+  <mat-radio-button value="1" #showIncome [checked]=isChecked >Income</mat-radio-button>
+  <mat-radio-button value="2" #showExpense [checked]=isChecked >Expense</mat-radio-button>
+</mat-radio-group>
+
+<div *ngIf= "showExpense.checked">
+ <mat-form-field>
+    <mat-select placeholder="Expences">
+      <mat-option *ngFor ="let expense of expenses" [value]="expense.id">{{expense.name}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+<div *ngIf= "showIncome.checked">
+ <mat-form-field>
+    <mat-select placeholder="Incomes">
+      <mat-option *ngFor ="let income of incomes" [value]="income.id">{{income.name}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
